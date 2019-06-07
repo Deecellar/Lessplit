@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="API\" />
+    <Folder Include="Plugins\MemoryUtils\" />
+    <Folder Include="Run\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Python.Runtime.NETStandard" Version="3.7.0" />
+  </ItemGroup>
+
+</Project>

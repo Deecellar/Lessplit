@@ -1,0 +1,8 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/LessplitCore
+/LessplitCore/bin/Debug
+/LessplitCore/obj/Debug
+/LessplitCore/obj
