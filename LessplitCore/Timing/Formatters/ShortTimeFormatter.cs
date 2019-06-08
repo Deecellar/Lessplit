@@ -3,6 +3,9 @@ using System.Globalization;
 
 namespace LessplitCore.Timing.Formatters
 {
+    /// <summary>
+    /// A time formatter to put the time in the format hh:mm:ss.ff, mm:ss.ff, ss.ff
+    /// </summary>
     class ShortTimeFormatter : ITimeFormatter
     {
         public string Format(TimeSpan? time)
@@ -21,7 +24,7 @@ namespace LessplitCore.Timing.Formatters
                 }
                 else if (time.Value.TotalHours >= 1)
                 {
-                    return negative + time.Value.ToString(@"h\:mm\:ss\:.", CultureInfo.InvariantCulture);
+                    return negative + time.Value.ToString(@"h\:mm\:ss\.ff", CultureInfo.InvariantCulture);
 
                 }
                 else if (time.Value.TotalMinutes >= 1)

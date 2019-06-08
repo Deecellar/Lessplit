@@ -2,6 +2,9 @@
 
 namespace LessplitCore.Timing.Formatters
 {
+    /// <summary>
+    /// A Time Formatter That autmaticly change the acurracy of the format depending on the time
+    /// </summary>
     public class AutomaticPrecisionTimeFormatter : ITimeFormatter
     {
         readonly RegularTimeFormatter InternalFormatter;

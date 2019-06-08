@@ -6,6 +6,10 @@ using System.Reflection;
 
 namespace LessplitCore.Plugins
 {
+    /// <summary>
+    /// This is the plugin loader, for now it's a singleton class, since we only want to use it as a plugin manager
+    /// for now it only have a list of plugins to Manage
+    /// </summary>
     public class Loader
     {
         public static Loader Instance = new Loader();
@@ -14,6 +18,10 @@ namespace LessplitCore.Plugins
         {
 
         }
+        /// <summary>
+        /// LoadPlugins Does just exactly what its name says, it loads .dll extensions and .py files, for now it cannot be extended
+        /// But in the future we may want to support more kinds of plugins
+        /// </summary>
         public void LoadPlugins()
         {
             Plugins = new List<IPlugin>();

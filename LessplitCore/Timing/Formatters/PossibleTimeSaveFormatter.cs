@@ -2,6 +2,9 @@
 
 namespace LessplitCore.Timing.Formatters
 {
+    /// <summary>
+    /// This is the formatter that is risponsible of formatting posible savetimes 
+    /// </summary>
     public class PossibleTimeSaveFormatter : ITimeFormatter
     {
         Accuracy Accuracy { get; set; }

@@ -3,6 +3,13 @@ using System;
 
 namespace LessplitCore.Plugins
 {
+    /// <summary>
+    /// A naive implementation of a python plugin, the idea is that it 
+    /// loads with pythonnet the code and just execute the respective python code
+    /// <see cref="Plugin"/> as the Pyobject that represents the code
+    /// <see cref="File"/> The file to load the code from
+    /// <see cref="Lock"/> it's an Int pointer that PythonEngine Uses, use it to dispose the lock on the engine
+    /// </summary>
     public class PythonPlugin : IPlugin
     {
         PyObject Plugin;

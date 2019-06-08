@@ -3,6 +3,10 @@ using System.Globalization;
 
 namespace LessplitCore.Timing.Formatters
 {
+    /// <summary>
+    /// regular time formmater, it formats like short formatter but it can be specified which class of format you want, by default it works like
+    /// <see cref="ShortTimeFormatter"/>
+    /// </summary>
     public class RegularTimeFormatter : ITimeFormatter
     {
         public Accuracy Accuracy { get; set; }

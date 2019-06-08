@@ -3,8 +3,12 @@ using System.Globalization;
 
 namespace LessplitCore.Timing.Formatters
 {
+    /// <summary>
+    /// This is the delta time formatter, it does, pretty much what it says, formats the delta time string
+    /// </summary>
     public class DeltaTimeFormatter
     {
+
         public Accuracy Accuracy { get; set; }
         public bool DropDecimals { get; set; }
 
