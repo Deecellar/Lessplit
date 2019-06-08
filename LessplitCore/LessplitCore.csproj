@@ -7,11 +7,18 @@
   <ItemGroup>
     <Folder Include="API\" />
     <Folder Include="Plugins\MemoryUtils\" />
+    <Folder Include="Run\RunSavers\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Eto.Forms" Version="2.4.1" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="Python.Runtime.NETStandard" Version="3.7.0" />
+    <PackageReference Include="SFML.Portable" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpeedrunDotComSharpStandard\SpeedrunDotComSharpStandard.csproj" />
   </ItemGroup>
 
 </Project>
