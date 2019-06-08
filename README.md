@@ -19,7 +19,7 @@
 ## TODO
 
  - [ ] Timer Core
- - [ ] Language plugin system
+ - [ ] Non Language Specific plugin system
  - [ ] GUI
  	 - [ ] Cutomizable GUI
 - [ ] Memory Watcher
