@@ -1,4 +1,6 @@
-﻿namespace LessplitCore.Plugins
+﻿using System;
+
+namespace LessplitCore.Plugins
 {
     /// <summary>
     /// Interface for the implementation on any kind of plugin
@@ -7,7 +9,7 @@
     /// <see cref="Load"/> Load Makes the plugin work (adds the functionality you need to add)
     /// <see cref="Unload"/>  Unload it's to finish the plugin lifetime, I.E: Stop a server, kill a process, etc
     /// </summary>
-    public interface IPlugin
+    public interface IPlugin : IDisposable
     {
 
         string Name { get; set; }

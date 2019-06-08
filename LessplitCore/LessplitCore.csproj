@@ -7,10 +7,10 @@
   <ItemGroup>
     <Folder Include="API\" />
     <Folder Include="Plugins\MemoryUtils\" />
-    <Folder Include="Run\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="Python.Runtime.NETStandard" Version="3.7.0" />
   </ItemGroup>
 
