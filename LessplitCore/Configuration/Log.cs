@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-
 namespace LessplitCore.Configuration
 {
     public static class Log
@@ -16,7 +15,7 @@ namespace LessplitCore.Configuration
 
             try
             {
-                var listener = new EventLogTraceListener("LiveSplit");
+                var listener = new TextWriterTraceListener("Lessplit");
                 listener.Filter = new EventTypeFilter(SourceLevels.Warning);
                 Trace.Listeners.Add(listener);
             }

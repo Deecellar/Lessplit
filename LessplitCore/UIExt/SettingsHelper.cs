@@ -10,12 +10,10 @@ namespace LessplitCore.UIExt
 {
     public class SettingsHelper
     {
-        public static CustomFontDialog.FontDialog GetFontDialog(Font previousFont, int minSize, int maxSize)
+        public static FontDialog GetFontDialog(Font previousFont)
         {
-            var dialog = new CustomFontDialog.FontDialog();
-            dialog.OriginalFont = previousFont;
-            dialog.MinSize = minSize;
-            dialog.MaxSize = maxSize;
+            var dialog = new FontDialog();
+            dialog.Font = previousFont;
             return dialog;
         }
 
@@ -26,11 +24,11 @@ namespace LessplitCore.UIExt
 
         public static void ColorButtonClick(Button button, Control control)
         {
-            var picker = new ColorPickerDialog();
-            picker.SelectedColorChanged += (s, x) => button.BackgroundColor = picker.SelectedColor;
-            picker.SelectedColor = picker.OldColor = button.BackgroundColor;
+            var picker = new ColorDialog();
+            picker.ColorChanged += (s, x) => button.BackgroundColor = picker.Color;
+            picker.Color = button.BackgroundColor;
             picker.ShowDialog(control);
-            button.BackgroundColor = picker.SelectedColor;
+            button.BackgroundColor = picker.Color;
         }
 
         public static Color ParseColor(XmlElement colorElement, Color defaultColor = default(Color))

@@ -1,4 +1,5 @@
-﻿using LessplitCore.Run;
+﻿using LessplitCore.Input;
+using LessplitCore.Run;
 using LessplitCore.Timing;
 using System;
 using System.Collections.Generic;
@@ -47,15 +48,6 @@ namespace LessplitCore.Configuration
             };
         }
 
-        private void RegisterScrolling(CompositeHook hook)
-        {
-            var mouse = hook.GetMouse();
-            var name = mouse.Information.InstanceName + " " + mouse.Information.InstanceGuid;
-            ScrollUp = new KeyOrButton(new GamepadButton(name, "Scroll_Up"));
-            ScrollDown = new KeyOrButton(new GamepadButton(name, "Scroll_Down"));
-            hook.RegisterHotKey(ScrollUp);
-            hook.RegisterHotKey(ScrollDown);
-        }
         public void AddToRecentSplits(string path, IRun run, TimingMethod lastTimingMethod, string lastHotkeyProfile)
         {
             var foundRecentSplitsFile = RecentSplits.FirstOrDefault(x => x.Path == path);
@@ -82,7 +74,7 @@ namespace LessplitCore.Configuration
 
             try
             {
-                RegisterScrolling(hook);
+                //   RegisterScrolling(hook);
             }
             catch (Exception ex)
             {
@@ -197,21 +189,21 @@ namespace LessplitCore.Configuration
 
         private void RegisterHotkey(CompositeHook hook, KeyOrButton key, bool deactivateForOtherPrograms)
         {
-            hook.RegisterHotKey(key);
+            //hook.RegisterHotKey(key);
             if (deactivateForOtherPrograms && key.IsKey)
             {
                 var args = new Eto.Forms.KeyEventArgs(key.Key, Eto.Forms.KeyEventType.KeyUp);
-                var modifiers = (args.Alt ? ModifierKeys.Alt : ModifierKeys.None)
-                    | (args.Shift ? ModifierKeys.Shift : ModifierKeys.None)
-                    | (args.Control ? ModifierKeys.Control : ModifierKeys.None);
-                HotkeyHook.Instance.RegisterHotKey(modifiers, args.KeyCode);
+                var modifiers = (args.Alt ? Eto.Forms.Keys.Alt : Eto.Forms.Keys.None)
+                    | (args.Shift ? Eto.Forms.Keys.Shift : Eto.Forms.Keys.None)
+                    | (args.Control ? Eto.Forms.Keys.Control : Eto.Forms.Keys.None);
+                //  HotkeyHook.Instance.RegisterHotKey(modifiers, args.KeyCode);
             }
         }
 
         public void UnregisterAllHotkeys(CompositeHook hook)
         {
-            hook.UnregisterAllHotkeys();
-            HotkeyHook.Instance.UnregisterAllHotkeys();
+            //  hook.UnregisterAllHotkeys();
+            // HotkeyHook.Instance.UnregisterAllHotkeys();
         }
     }
 }

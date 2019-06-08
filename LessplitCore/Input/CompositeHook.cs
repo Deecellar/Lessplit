@@ -32,11 +32,16 @@ namespace LessplitCore.Input
             return Key.ToString();
         }
 
+        public override bool Equals(object b)
+        {
+            KeyOrButton keyOrButton = this;
+            return keyOrButton == (KeyOrButton)b;
+        }
         public static bool operator ==(KeyOrButton a, KeyOrButton b)
         {
-            if ((object)a == null && (object)b == null)
+            if (a == null && b == null)
                 return true;
-            if ((object)a == null || (object)b == null)
+            if (a == null || b == null)
                 return false;
 
             if (a.IsKey && b.IsKey)
@@ -48,7 +53,7 @@ namespace LessplitCore.Input
 
         public static bool operator !=(KeyOrButton a, KeyOrButton b)
         {
-            return !(a == b);
+            return !(a.Equals(b));
         }
     }
 

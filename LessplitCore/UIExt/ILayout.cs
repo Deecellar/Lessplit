@@ -18,7 +18,6 @@ namespace LessplitCore.UIExt
         string FilePath { get; set; }
         LayoutSettings Settings { get; set; }
 
-        IList<ILayoutPlugin> LayoutPlugins { get; set; }
-        IEnumerable<IPlugin> Plugins { get; }
+        IList<IPlugin> LayoutPlugins { get; set; }
     }
 }

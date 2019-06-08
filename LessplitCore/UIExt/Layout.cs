@@ -1,7 +1,6 @@
 ﻿using LessplitCore.Configuration;
 using LessplitCore.Plugins;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace LessplitCore.UIExt
 {
@@ -10,15 +9,13 @@ namespace LessplitCore.UIExt
         public const int InvalidSize = -1;
 
         public LayoutSettings Settings { get; set; }
-        public IList<ILayoutPlugin> LayoutPlugins { get; set; }
-        public IEnumerable<IPlugin> Plugins
-            => LayoutPlugins.Select(x => x.Plugins);
+        public IList<IPlugin> LayoutPlugins { get; set; }
 
         public LayoutMode Mode { get; set; }
 
         public Layout()
         {
-            LayoutPlugins = new List<ILayoutPlugin>();
+            LayoutPlugins = new List<IPlugin>();
         }
 
         public int VerticalWidth { get; set; }
@@ -36,7 +33,7 @@ namespace LessplitCore.UIExt
         {
             return new Layout()
             {
-                LayoutPlugins = new List<ILayoutPlugin>(LayoutComponents),
+                LayoutPlugins = new List<IPlugin>(LayoutPlugins),
                 VerticalWidth = VerticalWidth,
                 VerticalHeight = VerticalHeight,
                 HorizontalWidth = HorizontalWidth,

@@ -1,5 +1,6 @@
 ﻿using Eto.Forms;
 using LessplitCore.Comparators;
+using LessplitCore.Input;
 using System.Collections.Generic;
 
 namespace LessplitCore.Configuration.SettingsFactory
